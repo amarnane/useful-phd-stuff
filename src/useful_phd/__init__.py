@@ -3,10 +3,8 @@ from .utils import (
     tardir,
     append_timestamp2path,
     create_experiment,
-    subsample_ssc_data,
     load_config,
     save_config,
-    random_sample,
 )
 
 
