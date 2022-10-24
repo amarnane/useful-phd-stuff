@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """Packaging setup script.
 
 This file is required by setuptools.  All configuration data is in the setup.cfg file.
@@ -5,4 +7,5 @@ This file is required by setuptools.  All configuration data is in the setup.cfg
 
 from setuptools import setup
 
-setup()
+if __name__ == "__main__":
+    setup()
