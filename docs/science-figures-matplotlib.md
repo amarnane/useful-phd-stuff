@@ -109,6 +109,9 @@ Note: `**kwargs` means keyword arguments. `**` is a special operator in python t
 
 You might also see `*args`. `*` unpacks lists. So `x,y` is an unpacked list and might be specified in the functions definition as `def myfunc(*args, **kwargs):` (which isn't very informative but happens more often than you would think.)
 
+## change dpi not figsize
+
+
 
 # seaborn
 
@@ -153,18 +156,25 @@ Even if you don't use the seaborn plotting functions setting the theme and conte
 - [Themes](https://seaborn.pydata.org/generated/seaborn.set_style.html#seaborn.set_style)
 - [Context](https://seaborn.pydata.org/generated/seaborn.set_context.html#seaborn.set_context)
 
-This [tutorial](https://seaborn.pydata.org/tutorial/aesthetics.html) is great and shows how you can even choose different themes for different subplot axes.
+This `seaborn` [tutorial](https://seaborn.pydata.org/tutorial/aesthetics.html) is great and shows how you can even choose different themes for different subplot axes.
+
+`matplotlib` has it's own set of themes available. To set the theme for matplotlib it is very similar to seaborn.
+```python
+plt.style.use('ggplot')
+# plot as normal
+...
+```
+To see a list of the theme's available 
+```python
+plt.style.available
+```
+
+**Note:** different theme's change different settings. Use `plt.style.use('default')` to reset before changing to a new theme.
+
+Personally I think `sns.set_context` is great for switching between paper and poster images. The increase in line width and reduction of white space is great on a poster and is so simple to switch between the two. Note: The themes available in matplotlib contain `seaborn poster` and `seaborn paper` styles. These themes do not quite replicate the behaviour of `sns.set_context` and if you have a choice between the two use `sns.set_context('poster')` over `plt.style.use('seaborn-v0_8-poster')`. 
+
 
 ## ggplot esque
 They have an experimental interface that is recently added `seaborn.objects`. They have a nice run through [here](https://seaborn.pydata.org/tutorial/objects_interface.html). Basic idea is you specify the data with a plot object and then add options such as type of plot (line/scatter/barchart) and data trasformations (aggregate/normalise).
 
 Looks cool and intuitive but is in development and again will be tricky to customise.
-
-
-[Tips to avoid data visualisation mistakes](https://www.data-to-viz.com/caveats.html)
-
-https://github.com/briatte/awesome-network-analysis#python
-
-https://khuyentran1401.github.io/Efficient_Python_tricks_and_tools_for_data_scientists/Chapter5/visualization.html#use-seaborn-style-on-matplotlib-plots
-
-https://www.barabasilab.com/art/work/art-network

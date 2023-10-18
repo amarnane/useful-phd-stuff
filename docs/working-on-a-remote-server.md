@@ -38,15 +38,15 @@ Some tips I find helpful.
 
 
 ## ssh connections
-`ssh` or [Secure shell](https://geekflare.com/understanding-ssh/) is a protocol used to access remote computers over a network. The link will describe it better than I can but the main thing to know is that it is a way to access other computers in a safe way. It is very secure and as a phd student the main thing to know is you can use it work remotely, create passwordless connections and passwordless git repos. If you ever want to use a cluster or connect to the biginf server, `ssh` is the way to do it. On linux the connections are done through the terminal (or vscode as I described above). On windows, it used to be a bit trickier but you can now access it through [powershell](https://lazyadmin.nl/powershell/powershell-ssh/) and vscode. 
+`ssh` or [Secure shell](https://geekflare.com/understanding-ssh/) is a protocol used to access remote computers over a network. The link will describe it better than I can but the main thing to know is that it is a way to access other computers in a safe way. It is very secure and as a phd student the main thing to know is you can use it work remotely, create passwordless connections and passwordless git repos. If you ever want to use a cluster or connect to the *infserver* server, `ssh` is the way to do it. On linux the connections are done through the terminal (or vscode as I described above). On windows, it used to be a bit trickier but you can now access it through [powershell](https://lazyadmin.nl/powershell/powershell-ssh/) and vscode. 
 
 To connect to a remote computer you go to the terminal and type the simple command
 ```
 ssh username@server.addresss
 ```
-So to connect to `biginf` I type
+So to connect to `infserver` I type
 ```
-ssh amarnane@big.inf.ed.ac.uk
+ssh amarnane@server.inf.ed.ac.uk
 ```
 You will then receive a prompt to enter my password and are connected. 
 
@@ -59,7 +59,7 @@ ssh keys will look something like
 ```
 id_ed25519          id_ed25519.pub         id_rsa      id_rsa.pub
 ```
-They are public/private pairs. Never share your private key. The public key is shared with remote systems (biginf or github) so they can check it matches the private key when you connect.
+They are public/private pairs. Never share your private key. The public key is shared with remote systems (*infserver* or github) so they can check it matches the private key when you connect.
 
 If no keys are present you will need to generate keys. The names `rsa`/`ed25519` are names of algorithms for  generate keys. `rsa` was the most common but is now quite old. `ed25519` is more secure and recommended. If you do use `rsa`, it is recommended to create one with higher bits. The commands you will commonly see are 
 ```
@@ -138,18 +138,18 @@ Host hostname2
 ```
 
 ### Example connection
-Here is an example of my setup to allow me to connect to `big.inf.ed.ac.uk`
+Here is an example of my setup to allow me to connect to `server.inf.ed.ac.uk`
 ```
-Host biginf
-    HostName big.inf.ed.ac.uk
+Host infserver
+    HostName server.inf.ed.ac.uk
     User amarnane
     ServerAliveInterval 30
 ```
 Where I have made `ServerAliveInterval` smaller than default to try reduce the number of disconnects that happen while I work.
 
-So now if I want to connect via `ssh` or copy files from my computer to the server I can just use `biginf`. For example moving public key to the server
+So now if I want to connect via `ssh` or copy files from my computer to the server I can just use `infserver`. For example moving public key to the server
 ```
-scp ~/.ssh/id_ed25519.pub biginf:~/
+scp ~/.ssh/id_ed25519.pub infserver:~/
 ```
 
 ***insert example proxyjump for connecting to eddie here***
