@@ -36,6 +36,9 @@ example_plot()
 
 aia.set_science_style(colorset='Dark2_8', linestyles=True)
 example_plot()
+
+# available palettes
+print(list(usp.colormaps.keys()))
 ```
 
 
