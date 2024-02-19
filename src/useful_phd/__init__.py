@@ -17,6 +17,7 @@ from .plotting import (
     science_figure_mplstyle,
     save_mpl_figure,
     set_science_style,
+    colormaps,
 )
 
 # from .sci_funcs import (
