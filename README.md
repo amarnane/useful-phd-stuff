@@ -20,7 +20,17 @@ You can then import these helper functions in your code in any `notebook`/`.py` 
 ```Python
 import useful_phd as usp
 
+def example_plot():
+    plt.plot([1, 2, 3, 4])
+    plt.ylabel('some numbers')
+    plt.show()
+
+example_plot()
 usp.set_science_style()
+example_plot()
+
+usp.set_science_style('catplot',palette='Bold_10')
+example_plot()
 usp.create_experiment()
 ```
 
@@ -34,8 +44,5 @@ pip install -e .
 ```
 pip uninstall useful-phd
 ```
-If you installed in developer mode the command 
-```
-python setup.py develop -u
-```
-should be used.
+
+
