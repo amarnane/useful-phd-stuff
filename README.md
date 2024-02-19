@@ -19,19 +19,23 @@ pip install .
 You can then import these helper functions in your code in any `notebook`/`.py` file  using
 ```Python
 import useful_phd as usp
-
+import matplotlib.pyplot as plt
 def example_plot():
     plt.plot([1, 2, 3, 4])
+    plt.plot([1, 1.5, 2, 3])
     plt.ylabel('some numbers')
     plt.show()
 
 example_plot()
-usp.set_science_style()
+
+aia.set_science_style()
 example_plot()
 
-usp.set_science_style('catplot',palette='Bold_10')
+aia.set_science_style('catplot',colorset='Bold_10')
 example_plot()
-usp.create_experiment()
+
+aia.set_science_style(colorset='Dark2_8', linestyles=True)
+example_plot()
 ```
 
 
