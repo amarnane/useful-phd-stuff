@@ -28,13 +28,13 @@ def example_plot():
 
 example_plot()
 
-aia.set_science_style()
+usp.set_science_style()
 example_plot()
 
-aia.set_science_style('catplot',colorset='Bold_10')
+usp.set_science_style('catplot',colorset='Bold_10')
 example_plot()
 
-aia.set_science_style(colorset='Dark2_8', linestyles=True)
+usp.set_science_style(colorset='Dark2_8', linestyles=True)
 example_plot()
 
 # available palettes
